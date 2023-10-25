@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # Define your environment-specific variables here
+  # For example:
+  #   DATABASE_URL: "postgres://user:password@localhost/database"
+
+before_script:
+  - echo "Setting up..."
+
+# Build stage
+build_job:
+  stage: build
+  script:
+    - echo "Building..."
+
+# Test stage
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+
+# Deploy stage
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying..."
+  only:
+    - main    
